@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分配用户昵称</title>
+<!--    <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />-->
+<!--    &lt;!&ndash; common.js 存放全局的变量以及一些公共方法 &ndash;&gt;-->
+<!--    <link rel="stylesheet" type="text/css" href="../css/common.css" />-->
+<!--    <link rel="stylesheet" type="text/css" href="../css/name_popup.css" />-->
+</head>
+<style>
+    /* .loadingModal{
+        position: absolute;
+        text-align: center;
+        z-index: 998;
+        display: flex;
+	    align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: black;
+        font-weight: 800;
+        font-size: large;
+        background-color: rgba(90, 90, 90, 0.7);
+    } */
+    .loadingImg{
+        width:20%;
+        z-index:1;
+    }
+
+</style>
+<!--<script src="../../../base/0.0.1/src/base.js"></script>-->
+<!--<script src="../../page/function/md5.js"></script>-->
+<!--&lt;!&ndash; common.js 存放全局的变量以及一些公共方法 &ndash;&gt;-->
+<!--<script src="../../page/function/common.js?ver=6"></script>-->
+<!--<script src="../../page/function/request.js?ver=6"></script>-->
+
+<body>
+    <div class="blackbg">
+        <!-- <div id="loadingModal" class="loadingModal">
+            <img src="../img/logo_color.png" class="loadingImg"/>
+           加载中，请稍后...
+            <div class="pic-slider-io">
+                <ul>
+                    <li><img src="../img/logo_color.png" class="loadingImg"/></li>
+                    <li><img src="../img/logo_grey.png" class="loadingImg"/></li>
+                </ul>
+           </div>
+        </div> -->
+
+        <div class="namepopup-body">
+            <!-- <div class="popup-off"><i class="iconfont iconweitongguo"></i></div> -->
+            <div class="namepopup-body-b">
+                <div class="popup-top">
+                    <div class="pass"></div>
+                    <div class="popup-title">
+                        <div>验证成功</div>
+                    </div>
+                </div>
+                <div class="grey-60">请输入您的昵称</div>
+                <div class="name">
+                    <input id="nickName" type="text" placeholder="" value="" class="input-144" />
+                </div>
+                <div class="popup-btn">
+                    <div id="enterBtn" class="popup-btn-color" onclick="interLiveRoom()">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        window.location.href = "http://interface.jictrust.cn:8889/src/page/index/name_popup.html?liveNo%3D550093%26source%3D3%26userInfo%3D%7B%22nickName%22%3A%22%E5%91%A8%E6%99%BA%E5%8B%87%22%2C%22phone%22%3A%2217396214321%22%7D";
+        // $("#loadingModal").hide();
+        //PARAMS_MAP为全局变量,common.js里,先将参数中的用户信息提取出来
+        // USER_INFO = JSON.parse(PARAMS_MAP.get("userInfo"));
+        // //加载下昵称 将昵称写入输入框
+        // $("#nickName").val(USER_INFO.nickName);
+        // changeNickNameStatus(false);
+        //
+        // //获取房间授权码
+        // $.ajax({
+        //     type:"GET",
+        //     url:REQUEST_URL+"/live/getAuthKey?roomId="+PARAMS_MAP.get("liveNo"),
+        //     contentType:"application/json",
+        //     async:false,
+        //     success: function(res){
+        //         //成功
+        //         if(res.code==200){
+        //             AUTH_KEY = res.data.authkey;
+        //             //查询上次进入本房间的昵称
+        //             $.ajax({
+        //                 type:"GET",
+        //                 url:REQUEST_URL+"/live/getLastNickName?phoneNum="+USER_INFO.phone+"&liveNo="+PARAMS_MAP.get("liveNo"),
+        //                 contentType:"application/json",
+        //                 // dataType:"json",
+        //                 async:false,
+        //                 success:function(result){
+        //                     //成功，结果非空，设置页面上显示的昵称然后直接进入直播间
+        //                     if(result.code == 200 && result.data && ""!=result.data){
+        //                         $("#nickName").val(result.data);
+        //                         interLiveRoom();
+        //                     }else{
+        //                         //启用输入框和确定按钮
+        //                         changeNickNameStatus(true);
+        //                     }
+        //                 },
+        //                 error:function(jqXHR){
+        //                     //启用输入框和确定按钮
+        //                     changeNickNameStatus(true);
+        //                 }
+        //             });
+        //         }else{
+        //             alert("直播间授权码获取失败!请退出后重试");
+        //         }
+        //     },
+        //     error:function(jqXHR){
+        //         alert("获取授权码异常："+ jqXHR.status);
+        //     }
+        // });
+    })
+</script>
+</html>
